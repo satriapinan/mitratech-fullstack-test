@@ -1,0 +1,22 @@
+<div class="container mx-auto p-6 flex flex-col justify-center min-h-screen">
+  <h1 class="text-3xl font-bold text-center">Manage Your Tasks</h1>
+
+  <button mat-raised-button color="primary" (click)="openTaskDialog()">
+    Create Task
+  </button>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div *ngFor="let task of tasks">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ task.name }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ task.description }}</p>
+          <span>{{ task.priority }} Priority</span>
+          <button (click)="viewTask(task._id)">View</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

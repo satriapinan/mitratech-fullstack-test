@@ -1,0 +1,9 @@
+<h2>{{ isEditMode ? "Update Task" : "Create Task" }}</h2>
+<form (ngSubmit)="saveTask()">
+  <input [(ngModel)]="task.name" placeholder="Task Name" required />
+  <textarea
+    [(ngModel)]="task.description"
+    placeholder="Task Description"
+  ></textarea>
+  <button type="submit">{{ isEditMode ? "Update" : "Create" }}</button>
+</form>
